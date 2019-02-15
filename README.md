@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a><img src="https://github.com/khandelwal-arpit/hapijs-starterkit/blob/master/assets/img/logo.png" alt="hapi.js" width="400"></a>
+  <a><img src="https://github.com/khandelwal-arpit/hapijs-starterkit/blob/master/assets/images/logo.png" alt="hapi.js" width="400"></a>
   <br>
   hapi.js Starterkit
   <br>
