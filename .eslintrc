@@ -1,0 +1,30 @@
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  node: true
+  mocha: true
+  jquery: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 2017
+  ecmaFeatures:
+    jsx: true
+  sourceType: module
+plugins:
+  - react
+rules:
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  curly: error
+  eqeqeq: error
+  no-empty: warn
+  no-console: off
+  no-unused-vars: off
