@@ -44,16 +44,16 @@
 12. [License](#License)
 
 ## Philosophy ##
-hapi.js (also known as hapi) is an open-source framework for web applications. The most common use of hapi is to build web services such as JSON API. You can build application programming interface (API) servers, websites, and HTTP proxy applications with hapi.js. It was created by the mobile team at Walmart Labs—led by Eran Hammer, who created OAuth—to handle their traffic for events like Black Friday, one of the busiest days for online shopping in the U.S. calendar.
+hapi.js (also known as hapi) is an open-source framework for web applications. The most common use of hapi is to build web services such as JSON API. You can build application programming interface (API) servers, websites, and HTTP proxy applications with hapi. It was created by the mobile team at Walmart Labs—led by Eran Hammer, who created OAuth—to handle their traffic for events like Black Friday, one of the busiest days for online shopping in the U.S. calendar.
 
 The original versions of hapi used the Express framework. Walmart found that there were limitations with Express that made the framework unsuitable for their particular requirements. Express was missing some key features, so Walmart eventually had hapi evolve to its own stand-alone framework.
 
 hapi provides a robust plugin system that allows you to add new features and fix bugs at a fast pace. hapi enables you to build scalable APIs, also it is an excellent choice for building Representational State Transfer (REST) APIs because it provides you with routing, input, output validation, and caching. You can build an API that serves all kinds of clients that need mobile and single-page applications.
 
-You can also use MySQL, MongoDB, and Postgres with hapi.js. hapi also allows you to build static websites. It provides a templating engine to render the dynamic content. You can use hapi.js with any front-end framework, like React, Angular, and Vue.js to create a single-page application.
+You can also use MySQL, MongoDB, and Postgres with hapi. hapi also allows you to build static websites. It provides a templating engine to render the dynamic content. You can use hapi with any front-end framework, like React, Angular, and Vue.js to create a single-page application.
 
 ## Application ##
-This hapi.js starterkit serves as a great starting point for all the hapi developers who were looking for a hapi based platform as their production server. Once succesfully deployed, this kit gives developers access to the following two modes of interaction with the server:
+This starter-kit serves as a great starting point for all the hapi developers who were looking for a hapi based platform as their production server. Once successfully deployed, this kit gives developers access to the following two modes of interaction with the server:
 
 1. localhost:8000 - Serve web request <br />
 2. localhost:8000/api - Serve rest api request
@@ -112,7 +112,7 @@ If you are using 'Chrome' for unit testing the application, you can Hapi-ly use 
 ├── .babelrc               // Babel config
 ├── .eslintrc              // Define eslint rules.
 ├── .eslintignore          // Ignores certain files for eslint rules
-├── Dockerfile             // Standard doceker file
+├── Dockerfile             // Standard docker file
 ├── docker-compose.yml     // Standard docker compose file 
 ├── server.js              // Contains all app configurations
 ├── .env                   // dotenv configuration file for environment variable 
