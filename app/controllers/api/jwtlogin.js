@@ -1,4 +1,5 @@
 'use strict';
+
 var Boom = require('boom');
 var JWT   = require('jsonwebtoken');
 const Joi = require('joi');
@@ -35,7 +36,7 @@ exports.postCredentials = {
                 let jwtToken = JWT.sign(obj, secret, { expiresIn: '1 day' });
                 data.user.password = undefined;
                 data.user.salt = undefined;
-                var response = h.response({ message : 'Successfully login', user : data.user });
+                var response = h.response({ message : 'Successfully logged-in', user : data.user });
                 response.header('Authorization', jwtToken);
                 response.code(200);
                 return response;

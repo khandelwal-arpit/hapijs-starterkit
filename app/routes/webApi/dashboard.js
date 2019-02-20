@@ -1,23 +1,20 @@
 'use strict';
 exports.plugin = {  
-    register: (plugin, options) => {
+    pkg: require('../../../package.json'),
+    name : 'dashboard_routes',
+    register: async (server, options) => {
         const Controllers = {
             dashboard: {
                 dashboard: require('../../controllers/web/dashboard')
             }
         };
-    
-        plugin.route([
-    
-            // Dashboard Routes
+        server.route([
             {
                 method: 'GET',
                 path: '/dashboard',
                 config: Controllers.dashboard.dashboard.showDashboard
             }
         ]);
-    },
-    pkg: require('../../../package.json'),
-    name : 'dashboard_routes'
+    }
 };
 

@@ -1,24 +1,22 @@
 'use strict';
 
 exports.plugin = {  
-    register: (plugin, options) => {
+    pkg: require('../../../../package.json'),
+    name : 'signup_routes_v1',
+    register: async (server, options) => {
         const Controllers = {
             auth: {
                 signup: require('../../../controllers/api/signup')
             }
         };
-        // Base path for mobile api for version 1
         const basePath = '/api/v1/';
-        plugin.route([
-            // JWT Auth Routes
+        server.route([
             {
                 method: 'POST',
-                path: basePath+'signUp',
+                path: basePath + 'signUp',
                 config: Controllers.auth.signup.userSignUp
             }
         ]);
     
-    },
-    pkg: require('../../../../package.json'),
-    name : 'signup_routes_v1'
+    }
 };

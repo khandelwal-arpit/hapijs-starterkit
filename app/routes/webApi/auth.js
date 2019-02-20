@@ -1,9 +1,9 @@
 'use strict';
 
-'use strict';
-
-exports.plugin = {  
-    register: (plugin, options) => {
+exports.plugin = {
+    pkg: require('../../../package.json'),
+    name : 'auth_routes',
+    register: async (server, options) => {
         const Controllers = {
             auth: {
                 login: require('../../controllers/web/login'),
@@ -12,9 +12,7 @@ exports.plugin = {
                 networks: require('../../controllers/web/networks')
             }
         };
-    
-        plugin.route([
-            // Auth Routes
+        server.route([
             {
                 method: 'GET',
                 path: '/',
@@ -45,7 +43,5 @@ exports.plugin = {
                 config: Controllers.auth.logout
             }
         ]);
-    },
-    pkg: require('../../../package.json'),
-    name : 'auth_routes'
+    }
 };

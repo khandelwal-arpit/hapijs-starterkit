@@ -1,15 +1,15 @@
 'use strict';
 
 exports.plugin = {  
-    register: (plugin, options) => {
-      
+    pkg: require('../../../package.json'),
+    name : 'setting_routes',
+    register: async (server, options) => { 
         const Controllers = {
             webapi: {
                 users: require('../../controllers/web/setting')
             }
         };
-        plugin.route([
-
+        server.route([
             {
                 method: 'GET',
                 path: '/setting',
@@ -41,7 +41,5 @@ exports.plugin = {
                 config: Controllers.webapi.users.resetPassword
             }
         ]);
-    },
-    pkg: require('../../../package.json'),
-    name : 'setting_routes'
+    }
 };

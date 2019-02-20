@@ -1,14 +1,15 @@
 'use strict';
 
 exports.plugin = {  
-    register: (plugin, options) => {
-      
+    pkg: require('../../../package.json'),
+    name : 'api_routes',
+    register: async (server, options) => {
         const Controllers = {
             webapi: {
                 users: require('../../controllers/web/user')
             }
         };
-        plugin.route([
+        server.route([
             {
                 method: 'GET',
                 path: '/profile',
@@ -20,7 +21,5 @@ exports.plugin = {
                 config: Controllers.webapi.users.editProfile
             }
         ]);
-    },
-    pkg: require('../../../package.json'),
-    name : 'api_routes'
+    }
 };
