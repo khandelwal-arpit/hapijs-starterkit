@@ -2,7 +2,7 @@
   "name": "hapijs-starterkit",
   "version": "1.0.0",
   "description": "Production ready starterkit application for Hapi.js",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "prestart": "webpack",
     "start": "nodemon server.js",
