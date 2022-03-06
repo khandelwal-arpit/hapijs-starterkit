@@ -4,8 +4,6 @@ var Boom = require('boom');
 var JWT   = require('jsonwebtoken');
 const Joi = require('joi');
 const Config = require('../../../config/config');
-const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
 const loginHelper = require('../../helpers/login');
 
 /* ================================== Controllers for V1 ============================== */
