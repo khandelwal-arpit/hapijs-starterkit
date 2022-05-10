@@ -1,8 +1,6 @@
 'use strict';
 
-const Mongoose = require('mongoose');
 const Joi = require('joi');
-const User = Mongoose.model('User');
 const loginHelper = require('../../helpers/login');
 
 exports.showForm = {

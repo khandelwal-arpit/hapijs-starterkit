@@ -1,6 +1,4 @@
 'use strict';
-const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
 
 exports.findByCredentials = async function (username, password) {
     return new Promise(async function (resolve, reject) {
@@ -11,7 +9,7 @@ exports.findByCredentials = async function (username, password) {
             } else {
                 query.username = username.toLowerCase();
             }
-            let user = await User.findOne(query);
+            let user = await global.User_findOne(query);
             if (!user || !user.authenticate(password)) {
                 return resolve({
                     statusCode: 401,

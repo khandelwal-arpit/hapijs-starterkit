@@ -1,6 +1,4 @@
 'use strict';
-const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
 
 exports.signUpUser = async function (userData) {
     return new Promise(async function (resolve, reject) {
@@ -9,8 +7,7 @@ exports.signUpUser = async function (userData) {
           if(data){
             return resolve({statusCode : 409, message : 'User already exist'});
           }else{
-             let user = new User(userData);
-             let savedUser = await user.save();
+             let savedUser = await global.User_create(userData);
              return resolve({statusCode : 201, message : 'Sign up successfully', user : savedUser});
           }
         } catch (error) {
@@ -24,7 +21,7 @@ async function isUserAlreadyExist(email) {
         try {
             var query = {};
             query.email = email.toLowerCase();
-            let user = await User.findOne(query);
+            let user = await global.User_findOne(query);
             if (user) {
                 return resolve(user);
             }

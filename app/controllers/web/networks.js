@@ -1,7 +1,5 @@
 'use strict';
-const Mongoose = require('mongoose');
 const Joi = require('joi');
-const User = Mongoose.model('User');
 
 exports.connect = function(provider) {
     // Return config object for hapi route
@@ -25,7 +23,7 @@ exports.connect = function(provider) {
                     var options = {
                         new: true
                     };
-                    let user = await User.findByIdAndUpdate(id, update, options);
+                    let user = await global.User_findByIdAndUpdate(id, update, options);
                     // Reset the session
                     request.cookieAuth.clear();
                     request.cookieAuth.set(user);
@@ -52,7 +50,7 @@ exports.disconnect = {
         var options = {
             new: true
         };
-        let user = await User.findByIdAndUpdate(id, update, options);
+        let user = await global.User_findByIdAndUpdate(id, update, options);
         // Reset the session
         request.cookieAuth.clear();
         request.cookieAuth.set(user);

@@ -1,13 +1,10 @@
 'use strict';
-const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
 const Crypto = require('crypto');
-
 
 exports.updatePassword = (request, old_pwd, new_pwd) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await User.findOne({
+            let user = await global.User_findOne({
                 email: request.auth.credentials.email
             });
             if (!user || !user.authenticate(old_pwd)) {
@@ -35,7 +32,7 @@ exports.updatePassword = (request, old_pwd, new_pwd) => {
 exports.generateResetPasswordToken = async (email) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await User.findOne({
+            let user = await global.User_findOne({
                 email: email
             });
             if (!user) {
@@ -59,7 +56,7 @@ exports.generateResetPasswordToken = async (email) => {
 exports.resetForgotPassword = async (request, newPassword, token) => {
     return new Promise( async (resolve, reject) => {
         try {
-            let user = await User.findOne({
+            let user = await global.User_findOne({
                 resetPasswordToken: token
             });
             if (!user) {
